@@ -9,7 +9,8 @@
      <!-- Font Awesome 6 CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+    <link rel="stylesheet" href="style.css">
+     <style>
     body {
       font-family: 'Open Sans', sans-serif;
     }
@@ -73,10 +74,10 @@
         <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">
             <i class="fa-solid fa-bars"></i>
         </button>
-        <!-- Navigation Links -->
+      
         <ul id="nav-links" class="flex space-x-6 md:flex md:space-x-6 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-midnight-green md:bg-transparent p-4 md:p-0 transition-all duration-300 ease-in-out transform md:transform-none md:opacity-100 opacity-0 md:opacity-100 hidden md:flex">
             <li><a href="index.html" class="block md:inline-block hover:text-playful-yellow transition">Home</a></li>
-            <li><a href="#about-us" class="block md:inline-block hover:text-playful-yellow transition">About Us</a></li>
+            <li><a href="index.html" class="block md:inline-block hover:text-playful-yellow transition">About Us</a></li>
             <li><a href="#project-specifications" class="block md:inline-block hover:text-playful-yellow transition">Specifications</a></li>
             <li><a href="timeline.html" class="block md:inline-block hover:text-playful-yellow transition">Project Timeline</a></li>
         </ul>
@@ -88,7 +89,7 @@
         <h2 class="text-3xl font-bold text-taupe mb-8 text-center">Project Timeline <i class="fa-solid fa-paw"></i></h2>
         <p class="text-lg text-center mb-12 italic">Weekly progress updates from our 6-month journey starting September 15, 2025.</p>
         <div class="space-y-8 max-w-4xl mx-auto">
-            <!-- Week 3 Block -->
+            <!-- Week 3-->
             <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-midnight-green">
                 <h3 class="text-xl font-semibold text-earthy-brown mb-2">Week 3: September 15th - September 21st, 2025 - Fundamentals Research</h3>
                <ul class="space-y-2 mb-4 list-disc list-inside">
@@ -102,9 +103,9 @@
   Resources
 </button>
                 <div id="week3" class="mt-4 hidden p-4 bg-gray-100 rounded">
-                    <!-- Placeholder for images/links -->
+
                  <figure>
-                    <img src="images/Workflow_basic.png" alt="basic work flow of a system" class="w-full max-w-2xl mx-auto rounded-lg shadow-md mt-2">
+                    <img src="images/week 3,4,5/Workflow_basic.png" alt="basic work flow of a system" class="w-full max-w-2xl mx-auto rounded-lg shadow-md mt-2">
                  <figcaption class="text-center text-gray-600 mt-2">Figure 1: Basic workflow of the system</figcaption>
                 </figure>
                 <p  class="mt-4">The figure illustrates the data flow of the Outdoor Cat Tracker system. The GPS module captures the cat's location and sends the data to Firebase, which acts as the central database and API hub. The React Native app listens for real-time updates from Firebase and displays the location information on the front-end interface, allowing live tracking and interaction.</p>
@@ -138,7 +139,7 @@
     </div>
     </div>
                 </div>
-            </div>
+    </div>
             <!-- Week 4-->
             <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-midnight-green">
                 <h3 class="text-xl font-semibold text-earthy-brown mb-2">Week 4: September 22nd - September 28th, 2025 - Power Management Introduction</h3>
@@ -155,14 +156,14 @@
   Resources
 </button>
                 <div id="week4" class="mt-4 hidden p-4 bg-gray-100 rounded">
-                    <!-- Placeholder for images/links -->
+        
                 <figure>
-                    <img src="/images/Function tables.png" alt="All Functions of the mobile app" class="w-full max-w-2xl mx-auto rounded-lg shadow-md mt-2">
+                    <img src="/images/Week 3,4,5/Function tables.png" alt="All Functions of the mobile app" class="w-full max-w-2xl mx-auto rounded-lg shadow-md mt-2">
                     <figcaption class="text-center text-gray-600 mt-2">Figure 1: All functions of the mobile app</figcaption>
                 </figure>
 
                  <figure>
-                    <img src="/images/Workflow_Overall.png" alt="Description of the image content" class="w-full max-w-4xl mx-auto rounded-lg shadow-md mt-2">
+                    <img src="/images/Week 3,4,5/Workflow_Overall.png" alt="Description of the image content" class="w-full max-w-4xl mx-auto rounded-lg shadow-md mt-2">
                     <figcaption class="text-center text-gray-600 mt-2">Figure 2: Overall workflow of the system</figcaption>
                 </figure>
                 <!-- System Entities and User Flow Section -->
@@ -199,7 +200,7 @@
                         <li>User can log out or continue monitoring.</li>
                     </ol>
 
-                    <!-- Key Notes -->
+                    <!--Notes -->
                     <h3 class="text-xl md:text-2xl font-semibold mb-3 text-beaver flex items-center gap-2">
                         Notes 
                     </h3>
@@ -211,25 +212,188 @@
                 </div>
                 </div>
             </div>
-            <!-- Week 5 Block -->
+            <!-- Week 5 -->
             <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-midnight-green">
                 <h3 class="text-xl font-semibold text-earthy-brown mb-2">Week 5: September 29th - October 5th, 2025 - GPS Module Integration</h3>
              <ul class="space-y-2 mb-4 list-disc list-inside">
                 <li>Identified and purchased required sensors.</li>
                 <li>Updated design document with selected components and key details.</li>
                 <li>Outlined microcontrollers, GPS, and BLE modules for procurement and initial testing.</li>
-                <li>Prototyped app flow using Figma/Adobe XD with defined inputs and outputs.</li>
+                <li>Prototyped app flow using Figma with defined inputs and outputs.</li>
                 <li>Initiated implementation design and documented component requirements.</li>
-</ul>
+            </ul>
+            </div>
+            <!--Week 6,7-->
+        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-midnight-green">
+                <h3 class="text-xl font-semibold text-earthy-brown mb-2">Week 6,7: October 6th - October 19th, 2025 - System Prototyping & Technical Analysis</h3>
+                <ul class="space-y-2 mb-4 list-disc list-inside">
+                    <li>Successfully researched, sourced, and received high-efficiency GPS sensors and LoRaWAN transceivers.</li>
+                    <li>Developed an automated spreadsheet-based calculator to analyze sleep and operating draws.</li>
+                    <li>Engineered a draft Figma prototype featuring user authentication, product code, and pet profile screens.</li>
+                    <li>Evaluated backend server solutions</li>
+                </ul>
 
-              <!---   <button class="flex gap-3 cursor-pointer text-white font-semibold bg-gradient-to-r from-gray-800 to-black px-7 py-3 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900" onclick="toggleResources('week4')">
+               <button class="flex gap-3 cursor-pointer text-white font-semibold bg-gradient-to-r from-gray-800 to-black px-7 py-3 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900" onclick="toggleResources('week6,7')">
   <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path fill="#FFFFFF" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
-  Resources -->
+  Resources
 </button>
-                <div id="week5" class="mt-4 hidden p-4 bg-gray-100 rounded">
-                    <!-- Placeholder for images/links -->
-                    <p>Add images or links here, e.g., <a href="#" class="text-warm-orange">GPS Tutorial</a></p>
-                    <img src="placeholder-week5.jpg" alt="Week 5 GPS integration" class="w-full mt-2 rounded">
+                <div id="week6,7" class="mt-4 hidden p-4 bg-gray-100 rounded">
+        
+                <figure>
+                    <img src="/images/Week 6,7/Draft figma screen.png" alt="Draft Figma screens" class="w-full max-w-2xl mx-auto rounded-lg shadow-md mt-2">
+                    <figcaption class="text-center text-gray-600 mt-2">Figure 1: Draft Figma screens</figcaption>
+                </figure>
+                     <p  class="mt-4 mb-6">Continued developing the web app by enhancing the prototype with functional buttons, an improved color scheme, and accessibility-focused design adjustments. Adding interactions between pages and refining the user experience based on initial quality assurance testing and feedback to ensure smoother navigation and overall usability improvements.
+</p>
+                 <figure>
+                    <img src="/images/Week 6,7/Part Purchase for the tracker.png" alt="Part Purchase for the tracker" class="w-full max-w-4xl mx-auto rounded-lg shadow-md mt-2">
+                    <figcaption class="text-center text-gray-600 mt-2">Figure 2: Part Purchase for the tracker</figcaption>
+                </figure>
+                <p class="mt-4">List of parts purchased for the Outdoor Cat Tracker prototype, including GPS module, microcontroller, LoRaWAN transceiver, battery, and other essential components required for building and testing the tracking device.</p>
+               
+                </div>
+            </div>
+            <!--Week 8,9-->
+        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-midnight-green">
+                <h3 class="text-xl font-semibold text-earthy-brown mb-2">Week 8,9: October 20th - November 2nd, 2025 - System Architecture & Integration Logic</h3>
+                <ul class="space-y-2 mb-4 list-disc list-inside">
+                    <li>Developed high-level block diagrams for both the Cat Tracker and Home Base Gateway modules.</li>
+                    <li>Visualized the end-to-end "Path of a GPS Position," documenting the data flow from the physical tracker through the radio receiver and local network to the backend server and frontend application.</li>
+                    <li>Refined the software prototype to 70% completion by incorporating professional typography and a consistent minimalistic color scheme, while integrating smooth inter-page transitions in Figma</li>
+                    <li>Designed the technical integration for the GPS data transmission path, focusing on the UART connection (GP0/GP1) between the microcontroller and the LoRa module to ensure clean data processing</li>
+                </ul>
+
+               <button class="flex gap-3 cursor-pointer text-white font-semibold bg-gradient-to-r from-gray-800 to-black px-7 py-3 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900" onclick="toggleResources('week8,9')">
+  <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path fill="#FFFFFF" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+  Resources
+</button>
+                <div id="week8,9" class="mt-4 hidden p-4 bg-gray-100 rounded">
+        
+                <figure>
+                    <img src="/images/Week 8,9/Block Diagram of Cat Tracker.png" alt="Block Diagram of Cat Tracker" class="w-full max-w-4xl mx-auto rounded-lg shadow-md mt-2">
+                    <figcaption class="text-center text-gray-600 mt-2 mb-6">Figure 1: Block Diagram of Cat Tracker</figcaption>
+                 <figure>
+
+                    <img src="/images/Week 8,9/Block Diagram of Receiver.png" alt="Block Diagram of Receiver" class="w-full max-w-4xl mx-auto rounded-lg shadow-md mt-2">
+                    <figcaption class="text-center text-gray-600 mt-2 mb-6">Figure 2: Block Diagram of Receiver</figcaption>
+                </figure>
+             
+                <figure>
+                    <img src="/images/Week 8,9/Path of GPS Position - From the cat to the owner.png" alt="Path of GPS position: From the cat to the owner" class="w-full max-w-4xl mx-auto rounded-lg shadow-md mt-2">
+                    <figcaption class="text-center text-gray-600 mt-2 mb-6">Figure 3: Path of GPS position: From the cat to the owner</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="/images/Week 8,9/Full System Block Diagram.png" alt="full system block diagram with specific parts" class="w-full max-w-4xl mx-auto rounded-lg shadow-md mt-2">
+                    <figcaption class="text-center text-gray-600 mt-2 mb-6">Figure 4: Full system block diagram with specific parts</figcaption>
+                </figure>
+
+                <figure class="max-w-5xl mx-auto mt-6">
+                    <div class="grid grid-cols-3 gap-4">
+                          <!-- Top row  -->
+                          <img src="/images/Week 8,9/WelcomeScreen-1.png" class="w-full rounded-lg shadow-md" alt="Get Started Screen with button Get Started">
+                          <img src="/images/Week 8,9/WelcomeCatTracker-2.png" class="w-full rounded-lg shadow-md" alt="Welcome Cat Tracker Screen">
+                          <img src="/images/Week 8,9/Login Screen -3.png" class="w-full rounded-lg shadow-md" alt="Login Screen with input fields for username and password">
+
+                         <!-- Bottom row -->
+                         <img src="/images/Week 8,9/Sign-up Screen -4.png" class="w-full rounded-lg shadow-md" alt="Sign-up Screen with input fields for username, email, password and confirm password">
+                         <img src="/images/Week 8,9/Pet Screen - 5.png" class="w-full rounded-lg shadow-md" alt="Pet Screen with location of the pet on the map">
+                    </div>
+
+                     <figcaption class="text-center text-gray-600 mt-4">
+                             Figure 5: Images of the prototype screens 
+                     </figcaption>
+</figure>
+                    <p class="mt-4">Successfully added three new screens to the prototype: a login/signup flow and an enhanced dashboard overview, using Figma for wireframing and interactive elements. This updates the prototype to 70% completion for core UI screens.
+                    Revised the previous draft by applying a consistent minimalistic design theme , improving visual coherence and user engagement.Integrated basic interactions between screens, such as smooth transitions from login to dashboard using prototype tools.
+                                                                                        </p>
+                
+
+                </div>
+            </div>
+            <!--Week 10,11-->
+             <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-midnight-green">
+                <h3 class="text-xl font-semibold text-earthy-brown mb-2">Week 10,11: November 3rd - November 23rd, 2025 - Full-Scale Integration & Prototype Finalization</h3>
+                <ul class="space-y-2 mb-4 list-disc list-inside">
+                    <li> Successfully interfaced the <strong>Quectel L80-R GPS module</strong> to parse <strong>NMEA 0183</strong> messages using the <strong>TinyGPS++</strong> library, enabling precise coordinate extraction for real-time tracking.</li>
+                    <li> Orchestrated a successful <strong>Point-to-Point (P2P)</strong> radio test between <strong>RAK3172</strong> LoRa transceivers, validating the transmission and reception of hexadecimal data packets across the long-range link.</li>
+                    <li> Finalized the mobile power solution by integrating an <strong>800mAh rechargeable LiPo battery</strong> with an <strong>MCP1700T LDO voltage regulator</strong> to ensure a stable 3.3V supply for all hardware components.</li>
+                    <li>Completed a 100% interactive Figma prototype with comprehensive screen-to-screen flows, meeting <strong>WCAG 2.1 AA accessibility standards</strong> for contrast, touch targets, and navigation</li>
+                    <li>Defined the system’s <strong>RESTful API</strong> schema (GET/POST) and configured the <strong>Raspberry Pi Pico 2 W</strong> gateway to bridge incoming radio telemetry with the backend server via HTTP requests</li>
+                </ul>
+
+               <button class="flex gap-3 cursor-pointer text-white font-semibold bg-gradient-to-r from-gray-800 to-black px-7 py-3 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900" onclick="toggleResources('week10,11')">
+  <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path fill="#FFFFFF" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+  Resources
+</button>
+                <div id="week10,11" class="mt-4 hidden p-4 bg-gray-100 rounded">
+        
+                <figure>
+                 <img src="/images/Week 10,11/Parsed GPS NMEA 0183 messages using TinyGPS+ library.png"
+                      alt="Parsed GPS NMEA 0183 output displayed after decoding with the TinyGPS+ library"
+                    class="w-full max-w-4xl mx-auto rounded-lg shadow-md mt-2">
+                    <figcaption class="text-center text-gray-600 mt-2 mb-6">
+                     Figure 1: Parsed GPS NMEA 0183 data processed using the TinyGPS+ library
+                    </figcaption>
+                </figure>
+                <p class="mt-4 mb-6">Successfully interfaced with the LoRa Module (i.e., send/receive commands, changed settings, ran Arduino Example program) in the Arduino IDE.</p>
+                <figure>
+                <img src="/images/Week 10,11/Raspberry Pi Pico 2 W microcontrollers model.png"
+                     alt="Raspberry Pi Pico 2 W microcontroller used as the receiver unit"
+                     class="w-full max-w-4xl mx-auto rounded-lg shadow-md mt-2">
+                    <figcaption class="text-center text-gray-600 mt-2 mb-6">
+                     Figure 2: Raspberry Pi Pico 2 W microcontroller used in the receiver module
+                    </figcaption>
+                </figure>
+<p class="mt-4 mb-6">
+    Raspberry Pi Pico 2 W microcontrollers have been ordered and will be used in the receiver module. These microcontrollers feature integrated 2.4GHz Wi-Fi connectivity, enabling wireless transmission of data to the server. The pinout diagram for the Pico 2 W is provided below.
+</p>
+
+<p class="mt-4 mb-6">
+    The system API is structured as follows. POST requests include GPS data transmissions from the microcontroller to the server, low-battery status notifications, and new account information submitted by the front-end interface. GET requests are used to retrieve GPS location updates and battery percentage data from the server for display on the front end.
+</p>
+               <figure>
+                <img src="/images/Week 10,11/Screens for Tracker Prototype.png"
+                     alt="User interface screens of the tracker prototype showing GPS location updates"
+                     class="w-full max-w-4xl mx-auto rounded-lg shadow-md mt-2">
+                 <figcaption class="text-center text-gray-600 mt-2 mb-6">
+                  Figure 3: Tracker prototype interface displaying GPS location (main system) and others functions
+                </figcaption>
+                </figure>
+
+                 <figure>
+                 <img src="/images/Week 10,11/Screens with prototype flows.png"
+                      alt="End-to-end prototype flow showing GPS data transmission from the cat tracker to the owner interface"
+                     class="w-full max-w-4xl mx-auto rounded-lg shadow-md mt-2">
+                    <figcaption class="text-center text-gray-600 mt-2 mb-6">
+                  Figure 4: End-to-end flow of GPS location data from the cat tracker to the owner interface
+                </figcaption>
+                </figure>
+                <p class="mt-4 mb-6">Successfully completed the full interactive prototype in Figma with 100% screen coverage and seamless navigation flows across all user journeys.</p>
+<p class="mt-4 mb-6">Recorded and exported a high-fidelity prototype videos:</p>
+<p class="mt-4 mb-6">Interaction Demo ( seconds): Demonstrates login → dashboard → real-time tracking → geofence dashboard → settings.
+</p>
+            <div class="w-full max-w-4xl mx-auto mt-6 mb-6 aspect-video">
+                <iframe
+                 src="https://www.youtube.com/embed/_vvbE5-ArkA"
+                 title="Cat Tracker Prototype Demo"
+                 frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                 allowfullscreen
+                 class="w-full h-full rounded-lg shadow-md">
+                </iframe>
+            </div>
+        <p class="mt-4 mb-6">
+             Cat Tracker Prototype Demo. You can watch the video demonstration above. Alternatively, you may interact with the prototype directly using the following link:
+                <a href="https://www.figma.com/proto/qc7LfpBLeTip5umEKkEOqn/Outdoor-Cat-Tracker-_-Prototype?page-id=1%3A3&node-id=40-7&viewport=492%2C531%2C0.24&t=0fAQd90wiGgrRFzB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=40%3A7&show-proto-sidebar=1"
+                 class="text-blue-600 underline"
+                  target="_blank" rel="noopener noreferrer">
+                                                 Outdoor Cat Tracker Prototype (Figma)</a>.
+        </p>        
+
+
+
+
                 </div>
             </div>
         </div>
