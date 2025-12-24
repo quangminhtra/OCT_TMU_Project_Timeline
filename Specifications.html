@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;500&display=swap" 
+    rel="stylesheet">
+    <title>Outdoor Cat Tracker-Timeline</title>
+     <!-- Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+     <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+    h1, h2, h3, nav, button {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'warm-orange': '#ff9934',
+                        'playful-yellow': '#f8f246',
+                        'taupe': '#483C32',
+                        'fresh-teal': '#2cbbc3',
+                        'midnight-green': '#004953',
+                        'champagne': '#F7E7CE',
+                        'columbia-blue': '#C4D8E2',
+                        'silver': '#C4BBAF',
+                        'beaver': '#96897B',
+                        'light-gold': '#E2D4B7',
+                        'linen': '#F5EBE0',
+                        'champagne-pink': '#E3D5CA',
+                        'timber-wolf': '#D6CCC2',
+                        'battleship-gray': '#8A817C'
+
+                    }
+                }
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+
+            menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('opacity-0');
+            navLinks.classList.toggle('opacity-100');
+            
+            // Toggle flex-col for mobile (column layout)
+            if (window.innerWidth < 768) {
+                navLinks.classList.toggle('flex-col');
+                navLinks.classList.toggle('space-y-4');
+                navLinks.classList.toggle('space-x-0');
+            }
+            });
+        });
+    </script>
+</head>
+<body class="bg-columbia-blue text-gray-800">
+
+     <!-- Header with Navigation -->
+<header class="bg-midnight-green text-white shadow-lg sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold flex items-center">
+            <i class="fa-solid fa-cat mr-2"></i> Outdoor Cat Tracker
+        </h1>
+       
+        <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+      
+        <ul id="nav-links" class="flex space-x-6 md:flex md:space-x-6 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-midnight-green md:bg-transparent p-4 md:p-0 transition-all duration-300 ease-in-out transform md:transform-none md:opacity-100 opacity-0 md:opacity-100 hidden md:flex">
+            <li><a href="index.html" class="block md:inline-block hover:text-playful-yellow transition">Home</a></li>
+            <li><a href="index.html" class="block md:inline-block hover:text-playful-yellow transition">About Us</a></li>
+            <li><a href="#project-specifications" class="block md:inline-block hover:text-playful-yellow transition">Specifications</a></li>
+            <li><a href="timeline.html" class="block md:inline-block hover:text-playful-yellow transition">Project Timeline</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <main class="container mx-auto max-w-6xl px-4 py-12 flex-grow">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+            <section class="bg-white p-6 rounded-lg shadow-lg" aria-labelledby="hardware-heading">
+                <h2 id="hardware-heading" class="text-2xl font-semibold mb-4 text-primary">Hardware Components</h2>
+                
+                <figure>
+                <img src="images\Outdoor Cat Tracker Hardware Assembly.png" alt="Outdoor Cat Tracker Hardware Assembly" class="w-full object-cover rounded-md mb-6" aria-label="Hardware assembly of the Outdoor Cat Tracker">
+                <figcaption class="text-sm text-center text-gray-600 mb-4">Figure 1: Outdoor Cat Tracker Hardware Assembly</figcaption>
+                </figure>
+              
+                <figure> <img src="images\Antenna Types-Coil Type.png" alt="Coil Type Antenna for Outdoor Cat Tracker" class="w-full object-cover rounded-md mb-6" aria-label="Coil type antenna used in the Outdoor Cat Tracker">
+                <figcaption class="text-sm text-center text-gray-600 mb-6">Figure 2: Coil Type Antenna for Enhanced Signal Reception</figcaption>
+                </figure>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <i class="fas fa-microchip text-accent mr-2 mt-1"></i>
+                        <span>Core: RAK3172 (LoRaWAN) & L80-R (GPS)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-battery-half text-accent mr-2 mt-1"></i>
+                        <span>Power: LiPo 604030 Battery + MCP1700 Regulator</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-shield-alt text-accent mr-2 mt-1"></i>
+                        <span>Housing: Custom 3D Printed Resin (Waterproof)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-server text-accent mr-2 mt-1"></i>
+                        <span>Base Station: Raspberry Pi Pico 2 W</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-wifi text-accent mr-2 mt-1"></i>
+                        <span>Connectivity: 915 MHz Ceramic Chip Antenna</span>
+                    </li>
+                </ul>
+            </section>
+
+            
+            <section class="bg-white p-6 rounded-lg shadow-lg" aria-labelledby="software-heading">
+                <h2 id="software-heading" class="text-2xl font-semibold mb-4 text-primary">Software Ecosystem</h2>
+                <figure><img src="images\Week 8,9\WelcomeScreen-1.png" alt="Mobile App Screenshot for Outdoor Cat Tracker" class="w-full  object-cover rounded-md mb-6" aria-label="Screenshot of the React Native mobile app interface">
+                <figcaption class="text-sm text-center text-gray-600 mb-6">Figure 3: Mobile App Interface for Outdoor Cat Tracker</figcaption>
+                </figure>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <i class="fas fa-mobile-alt text-accent mr-2 mt-1"></i>
+                        <span>Frontend: React Native Mobile App</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-database text-accent mr-2 mt-1"></i>
+                        <span>Backend: Firebase (Real-time DB & Auth)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marked-alt text-accent mr-2 mt-1"></i>
+                        <span>Features: Live GPS Map & Geofencing</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-pencil-ruler text-accent mr-2 mt-1"></i>
+                        <span>Design: Prototyped in Figma <a href="https://www.figma.com/proto/qc7LfpBLeTip5umEKkEOqn/Outdoor-Cat-Tracker-_-Prototype?page-id=1%3A3&node-id=40-7&viewport=492%2C531%2C0.24&t=0fAQd90wiGgrRFzB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=40%3A7&show-proto-sidebar=1"
+                 class="text-blue-600 underline"
+                  target="_blank" rel="noopener noreferrer">
+                (Link to Figma)</a>.</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Key Metrics-->
+
+        <div class="container mx-auto max-w-6xl bg-white p-6 rounded-lg shadow-lg mb-12">
+            <h2 class="text-2xl font-semibold mb-4 text-center">Key Metrics</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                <div class="p-4 bg-white bg-opacity-10 rounded-md">
+                    <i class="fas fa-weight-hanging text-2xl mb-2"></i>
+                    <p class="text-lg font-bold">Weight: ~25.2g (Target < 30g) </p>
+                </div>
+                <div class="p-4 bg-white bg-opacity-10 rounded-md">
+                    <i class="fas fa-signal text-2xl mb-2"></i>
+                    <p class="text-lg font-bold">Range: >1 km</p>
+                </div>
+                <div class="p-4 bg-white bg-opacity-10 rounded-md">
+                    <i class="fas fa-dollar-sign text-2xl mb-2"></i>
+                    <p class="text-lg font-bold">Cost: ~$40.57 CAD</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Demonstration -->
+     <div class="w-full max-w-4xl mx-auto mt-6 mb-6 aspect-video">
+        <h3 class="text-2xl font-semibold mb-4 text-primary">Video Prototype Demonstration</h3>
+                <iframe
+                 src="https://www.youtube.com/embed/_vvbE5-ArkA"
+                 title="Cat Tracker Prototype Demo"
+                 frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                 allowfullscreen
+                 class="w-full h-full rounded-lg shadow-md">
+                </iframe>
+
+            <p class="mt-4 mb-6">
+             Cat Tracker Prototype Demo. You can watch the video demonstration above. Alternatively, you may interact with the prototype directly using the following link:
+             <a href="https://www.figma.com/proto/qc7LfpBLeTip5umEKkEOqn/Outdoor-Cat-Tracker-_-Prototype?page-id=1%3A3&node-id=40-7&viewport=492%2C531%2C0.24&t=0fAQd90wiGgrRFzB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=40%3A7&show-proto-sidebar=1"
+             class="text-blue-600 underline"
+             target="_blank" rel="noopener noreferrer">Outdoor Cat Tracker Prototype (Figma)</a>. </p>        
+     </div>
+      
+ <!-- Footer -->
+    <footer class="bg-midnight-green text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <nav class="mb-4">
+            <ul class="flex justify-center space-x-6">
+                <li><a href="index.html" class="hover:text-playful-yellow transition">Home</a></li>
+                <li><a href="#about-us" class="hover:text-playful-yellow transition">About Us</a></li>
+                 <li><a href="Specifications.html" class="hover:text-playful-yellow transition">Specifications</a></li>
+                <li><a href="timeline.html" class="hover:text-playful-yellow transition">Project Timeline</a></li>
+            </ul>
+            </nav>
+            <div class="space-x-4">
+              <!-- <a href="https://github.com/your-repo" class="text-3xl hover:text-fresh-teal transition"><i class="fa-brands fa-github"></i></a> -->
+            </div>
+            </div>
+            <p class="mt-4">&copy; 2025 Outdoor Cat Tracker Team</p>
+        </div>
+       
+    </footer>
+</body>
+</html>

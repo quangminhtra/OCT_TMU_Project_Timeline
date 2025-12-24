@@ -52,7 +52,7 @@
             navLinks.classList.toggle('opacity-0');
             navLinks.classList.toggle('opacity-100');
             
-            // Toggle flex-col for mobile (column layout)
+         
             if (window.innerWidth < 768) {
                 navLinks.classList.toggle('flex-col');
                 navLinks.classList.toggle('space-y-4');
@@ -65,7 +65,7 @@
 <body class="bg-columbia-blue text-gray-800">
 
      <!-- Header with Navigation -->
-<header class="bg-midnight-green text-white shadow-lg relative z-50">
+<header class="bg-midnight-green text-white shadow-lg sticky top-0 z-50">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
         <h1 class="text-2xl font-bold flex items-center">
             <i class="fa-solid fa-cat mr-2"></i> Outdoor Cat Tracker
@@ -78,13 +78,13 @@
         <ul id="nav-links" class="flex space-x-6 md:flex md:space-x-6 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-midnight-green md:bg-transparent p-4 md:p-0 transition-all duration-300 ease-in-out transform md:transform-none md:opacity-100 opacity-0 md:opacity-100 hidden md:flex">
             <li><a href="index.html" class="block md:inline-block hover:text-playful-yellow transition">Home</a></li>
             <li><a href="index.html" class="block md:inline-block hover:text-playful-yellow transition">About Us</a></li>
-            <li><a href="#project-specifications" class="block md:inline-block hover:text-playful-yellow transition">Specifications</a></li>
+            <li><a href="Specifications.html" class="block md:inline-block hover:text-playful-yellow transition">Specifications</a></li>
             <li><a href="timeline.html" class="block md:inline-block hover:text-playful-yellow transition">Project Timeline</a></li>
         </ul>
     </nav>
 </header>
 
-    <!-- Timeline Section -->
+    <!-- Timeline -->
     <section class="container mx-auto px-6 py-12">
         <h2 class="text-3xl font-bold text-taupe mb-8 text-center">Project Timeline <i class="fa-solid fa-paw"></i></h2>
         <p class="text-lg text-center mb-12 italic">Weekly progress updates from our 6-month journey starting September 15, 2025.</p>
@@ -313,7 +313,7 @@
             </div>
             <!--Week 10,11-->
              <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-midnight-green">
-                <h3 class="text-xl font-semibold text-earthy-brown mb-2">Week 10,11: November 3rd - November 23rd, 2025 - Full-Scale Integration & Prototype Finalization</h3>
+                <h3 class="text-xl font-semibold text-earthy-brown mb-2">Week 10,11: November 3rd - November 23rd, 2025 - Full-Scale Integration & Prototype Finalization (End of Fall Term)</h3>
                 <ul class="space-y-2 mb-4 list-disc list-inside">
                     <li> Successfully interfaced the <strong>Quectel L80-R GPS module</strong> to parse <strong>NMEA 0183</strong> messages using the <strong>TinyGPS++</strong> library, enabling precise coordinate extraction for real-time tracking.</li>
                     <li> Orchestrated a successful <strong>Point-to-Point (P2P)</strong> radio test between <strong>RAK3172</strong> LoRa transceivers, validating the transmission and reception of hexadecimal data packets across the long-range link.</li>
@@ -370,8 +370,8 @@
                 </figcaption>
                 </figure>
                 <p class="mt-4 mb-6">Successfully completed the full interactive prototype in Figma with 100% screen coverage and seamless navigation flows across all user journeys.</p>
-<p class="mt-4 mb-6">Recorded and exported a high-fidelity prototype videos:</p>
-<p class="mt-4 mb-6">Interaction Demo ( seconds): Demonstrates login → dashboard → real-time tracking → geofence dashboard → settings.
+                <p class="mt-4 mb-6">Recorded and exported a high-fidelity prototype videos:</p>
+                <p class="mt-4 mb-6">Interaction Demo ( seconds): Demonstrates login → dashboard → real-time tracking → geofence dashboard → settings.
 </p>
             <div class="w-full max-w-4xl mx-auto mt-6 mb-6 aspect-video">
                 <iframe
@@ -388,7 +388,7 @@
                 <a href="https://www.figma.com/proto/qc7LfpBLeTip5umEKkEOqn/Outdoor-Cat-Tracker-_-Prototype?page-id=1%3A3&node-id=40-7&viewport=492%2C531%2C0.24&t=0fAQd90wiGgrRFzB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=40%3A7&show-proto-sidebar=1"
                  class="text-blue-600 underline"
                   target="_blank" rel="noopener noreferrer">
-                                                 Outdoor Cat Tracker Prototype (Figma)</a>.
+                 Outdoor Cat Tracker Prototype (Figma)</a>.
         </p>        
 
 
@@ -406,13 +406,12 @@
             <ul class="flex justify-center space-x-6">
                 <li><a href="index.html" class="hover:text-playful-yellow transition">Home</a></li>
                 <li><a href="#about-us" class="hover:text-playful-yellow transition">About Us</a></li>
-                 <li><a href="index.html" class="hover:text-playful-yellow transition">Specifications</a></li>
+                 <li><a href="Specifications.html" class="hover:text-playful-yellow transition">Specifications</a></li>
                 <li><a href="timeline.html" class="hover:text-playful-yellow transition">Project Timeline</a></li>
             </ul>
             </nav>
             <div class="space-x-4">
               <!-- <a href="https://github.com/your-repo" class="text-3xl hover:text-fresh-teal transition"><i class="fa-brands fa-github"></i></a> -->
-           <!-- <a href="https://discord.gg/your-server" class="text-3xl hover:text-fresh-teal transition"><i class="fa-brands fa-discord"></i></a> -->
             </div>
             </div>
             <p class="mt-4">&copy; 2025 Outdoor Cat Tracker Team</p>

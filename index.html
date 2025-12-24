@@ -8,7 +8,7 @@
     <title>Outdoor Cat Tracker-Homepage</title>
     
 
-    <!-- Font Awesome 6 CDN -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
 
@@ -55,7 +55,7 @@
             navLinks.classList.toggle('opacity-0');
             navLinks.classList.toggle('opacity-100');
             
-            // Toggle flex-col for mobile (column layout)
+            // Toggle column for mobile (column layout)
             if (window.innerWidth < 768) {
                 navLinks.classList.toggle('flex-col');
                 navLinks.classList.toggle('space-y-4');
@@ -68,7 +68,7 @@
 <body class="bg-columbia-blue text-gray-800">
 
  
-<header class="bg-midnight-green text-white shadow-lg relative z-50">
+<header class="bg-midnight-green text-white shadow-lg sticky top-0 z-50">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
         <h1 class="text-2xl font-bold flex items-center">
             <i class="fa-solid fa-cat mr-2"></i> Outdoor Cat Tracker
@@ -81,23 +81,23 @@
         <ul id="nav-links" class="flex space-x-6 md:flex md:space-x-6 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-midnight-green md:bg-transparent p-4 md:p-0 transition-all duration-300 ease-in-out transform md:transform-none md:opacity-100 opacity-0 md:opacity-100 hidden md:flex">
             <li><a href="index.html" class="block md:inline-block hover:text-playful-yellow transition">Home</a></li>
             <li><a href="#about-us" class="block md:inline-block hover:text-playful-yellow transition">About Us</a></li>
-            <li><a href="#project-specifications" class="block md:inline-block hover:text-playful-yellow transition">Specifications</a></li>
+            <li><a href="Specifications.html" class="block md:inline-block hover:text-playful-yellow transition">Specifications</a></li>
             <li><a href="timeline.html" class="block md:inline-block hover:text-playful-yellow transition">Project Timeline</a></li>
         </ul>
     </nav>
 </header>
 
-    <!-- Introduction Section -->
+    <!-- Intro -->
     <section id="introduction" class="container mx-auto px-6 py-12 text-center">
         <h2 class="text-4xl font-bold text-taupe mb-4">Welcome to Our Pet Safety Adventure!</h2>
         <p class="text-lg max-w-2xl mx-auto mb-8">
             The Outdoor Cat Tracker is a smart, lightweight wearable tag designed for adventurous cats. It tracks location in real-time using GPS outdoors and BLE or Wi-Fi indoors, monitors activity levels, and sends geofencing alerts to keep your furry friend safe.
         </p>
-       <!-- <img src="placeholder-cat-tracker.jpg" alt="Prototype of the Outdoor Cat Tracker device on a cat collar" class="w-full max-w-md mx-auto rounded-lg shadow-md mb-8"> -->
+       <!-- <img src="placeholder-cat-tracker.jpg" alt="Prototype of the Outdoor Cat Tracker device on a cat collar" class="w-full max-w-md mx-auto rounded-lg shadow-md mb-8"> for later and future use-->
         <a href="timeline.html" class="bg-beaver text-white px-6 py-3 rounded hover:bg-light-gold transition">See Our Project Timeline</a>
     </section>
 
-    <!-- About Us Section -->
+    <!-- About Us -->
     <section id="about-us" class="container mx-auto px-6 py-12 bg-white">
         <h2 class="text-3xl font-bold text-taupe mb-8 text-center"><i class="fa-solid fa-shield-cat"></i> About Us <i class="fa-solid fa-shield-cat"></i></h2>
         <p class="text-lg text-center mb-6">We are a team of four Computer Engineering students at Toronto Metropolitan University (TMU), passionate about combining technology with pet care. Inspired by the real-world challenge of ensuring the safety of outdoor cats, we’re motivated to create innovative solutions that bring peace of mind to pet owners.</p>
@@ -125,7 +125,7 @@
       
     </section>
 
-    <!-- Project Specification Section -->
+    <!-- Project Specification  -->
     <section id="project-specifications" class="container mx-auto px-6 py-12">
         <h2 class="text-3xl font-bold text-taupe mb-8 text-center">Project Specifications</h2>
         <div class="grid md:grid-cols-2 gap-8">
@@ -148,7 +148,7 @@
         </div>
     </section>
 
-    <!-- Acknowledgement Section -->
+    <!-- Acknowledgement -->
     <section id="acknowledgement" class="container mx-auto px-6 py-12 bg-champagne rounded-lg my-8 shadow-md">
         <h2 class="text-3xl font-bold text-taupe mb-6 text-center">Acknowledgements</h2>
         <p class="text-lg text-center mb-4 italic">
@@ -175,13 +175,12 @@
             <ul class="flex justify-center space-x-6">
                 <li><a href="index.html" class="hover:text-playful-yellow transition">Home</a></li>
                 <li><a href="#about-us" class="hover:text-playful-yellow transition">About Us</a></li>
-                <li><a href="#project-specifications" class="hover:text-playful-yellow transition">Specifications</a></li>
+                <li><a href="Specifications.html" class="hover:text-playful-yellow transition">Specifications</a></li>
                 <li><a href="timeline.html" class="hover:text-playful-yellow transition">Project Timeline</a></li>
             </ul>
             </nav>
             <div class="space-x-4">
             <!-- <a href="https://github.com/your-repo" class="text-3xl hover:text-fresh-teal transition"><i class="fa-brands fa-github"></i></a> -->
-           <!-- <a href="https://discord.gg/your-server" class="text-3xl hover:text-fresh-teal transition"><i class="fa-brands fa-discord"></i></a> -->
             </div>
             <p class="mt-4">&copy; 2025 Outdoor Cat Tracker Team</p>
         </div>
