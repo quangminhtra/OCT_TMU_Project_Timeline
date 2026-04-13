@@ -1,23 +1,37 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;500&display=swap" 
-    rel="stylesheet">
-    <title>Outdoor Cat Tracker-Timeline</title>
-     <!-- Font Awesome 6 CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Outdoor Cat Tracker - Specifications</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-     <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-    }
-    h1, h2, h3, nav, button {
-      font-family: 'Poppins', sans-serif;
-    }
-  </style>
+    <style>
+        body { font-size: 18px;font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4, nav, button { font-family: 'Poppins', sans-serif; }
+        .metric-bar { position: relative; overflow: hidden; }
+        .metric-bar span { display: block; height: 100%; border-radius: 9999px; }
+        .slider-track {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: minmax(260px, 360px);
+            gap: 1.25rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 0.5rem;
+        }
+        .slider-track > figure {
+            scroll-snap-align: start;
+        }
+        .slider-track::-webkit-scrollbar {
+            height: 10px;
+        }
+        .slider-track::-webkit-scrollbar-thumb {
+            background: #8A817C;
+            border-radius: 9999px;
+        }
+    </style>
     <script>
         tailwind.config = {
             theme: {
@@ -37,180 +51,313 @@
                         'champagne-pink': '#E3D5CA',
                         'timber-wolf': '#D6CCC2',
                         'battleship-gray': '#8A817C'
-
                     }
                 }
             }
-        }
-        
+        };
+
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menu-toggle');
             const navLinks = document.getElementById('nav-links');
-
             menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('hidden');
-            navLinks.classList.toggle('opacity-0');
-            navLinks.classList.toggle('opacity-100');
-            
-            // Toggle flex-col for mobile (column layout)
-            if (window.innerWidth < 768) {
-                navLinks.classList.toggle('flex-col');
-                navLinks.classList.toggle('space-y-4');
-                navLinks.classList.toggle('space-x-0');
-            }
+                navLinks.classList.toggle('hidden');
+                navLinks.classList.toggle('opacity-0');
+                navLinks.classList.toggle('opacity-100');
+                if (window.innerWidth < 768) {
+                    navLinks.classList.toggle('flex-col');
+                    navLinks.classList.toggle('space-y-4');
+                    navLinks.classList.toggle('space-x-0');
+                }
             });
         });
     </script>
 </head>
 <body class="bg-columbia-blue text-gray-800">
+    <header class="bg-midnight-green text-white shadow-lg sticky top-0 z-50">
+        <nav class="max-w-[96rem] mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold flex items-center gap-3">
+                <img src="assets/MS_11_homebase logo.png" alt="Outdoor Cat Tracker logo" class="h-15 w-20 object-contain">
+                <span>Outdoor Cat Tracker</span>
+            </h1>
+            <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul id="nav-links" class="flex space-x-6 md:flex md:space-x-6 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-midnight-green md:bg-transparent p-4 md:p-0 transition-all duration-300 ease-in-out transform md:transform-none md:opacity-100 opacity-0 hidden md:flex">
+                <li><a href="index.html" class="block md:inline-block hover:text-playful-yellow transition">Home</a></li>
+                <li><a href="index.html#about-us" class="block md:inline-block hover:text-playful-yellow transition">About Us</a></li>
+                <li><a href="Specifications.html" class="block md:inline-block hover:text-playful-yellow transition">Specifications</a></li>
+                <li><a href="timeline.html" class="block md:inline-block hover:text-playful-yellow transition">Project Timeline</a></li>
+            </ul>
+        </nav>
+    </header>
 
-     <!-- Header with Navigation -->
-<header class="bg-midnight-green text-white shadow-lg sticky top-0 z-50">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold flex items-center">
-            <i class="fa-solid fa-cat mr-2"></i> Outdoor Cat Tracker
-        </h1>
-       
-        <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-      
-        <ul id="nav-links" class="flex space-x-6 md:flex md:space-x-6 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-midnight-green md:bg-transparent p-4 md:p-0 transition-all duration-300 ease-in-out transform md:transform-none md:opacity-100 opacity-0 md:opacity-100 hidden md:flex">
-            <li><a href="index.html" class="block md:inline-block hover:text-playful-yellow transition">Home</a></li>
-            <li><a href="index.html" class="block md:inline-block hover:text-playful-yellow transition">About Us</a></li>
-            <li><a href="#project-specifications" class="block md:inline-block hover:text-playful-yellow transition">Specifications</a></li>
-            <li><a href="timeline.html" class="block md:inline-block hover:text-playful-yellow transition">Project Timeline</a></li>
-        </ul>
-    </nav>
-</header>
-
-
-    <main class="container mx-auto max-w-6xl px-4 py-12 flex-grow">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    
-            <section class="bg-white p-6 rounded-lg shadow-lg" aria-labelledby="hardware-heading">
-                <h2 id="hardware-heading" class="text-2xl font-semibold mb-4 text-primary">Hardware Components</h2>
-                
-                <figure>
-                <img src="images\Outdoor Cat Tracker Hardware Assembly.png" alt="Outdoor Cat Tracker Hardware Assembly" class="w-full object-cover rounded-md mb-6" aria-label="Hardware assembly of the Outdoor Cat Tracker">
-                <figcaption class="text-sm text-center text-gray-600 mb-4">Figure 1: Outdoor Cat Tracker Hardware Assembly</figcaption>
-                </figure>
-              
-                <figure> <img src="images\Antenna Types-Coil Type.png" alt="Coil Type Antenna for Outdoor Cat Tracker" class="w-full object-cover rounded-md mb-6" aria-label="Coil type antenna used in the Outdoor Cat Tracker">
-                <figcaption class="text-sm text-center text-gray-600 mb-6">Figure 2: Coil Type Antenna for Enhanced Signal Reception</figcaption>
-                </figure>
-                <ul class="space-y-3">
-                    <li class="flex items-start">
-                        <i class="fas fa-microchip text-accent mr-2 mt-1"></i>
-                        <span>Core: RAK3172 (LoRaWAN) & L80-R (GPS)</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-battery-half text-accent mr-2 mt-1"></i>
-                        <span>Power: LiPo 604030 Battery + MCP1700 Regulator</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-shield-alt text-accent mr-2 mt-1"></i>
-                        <span>Housing: Custom 3D Printed Resin (Waterproof)</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-server text-accent mr-2 mt-1"></i>
-                        <span>Base Station: Raspberry Pi Pico 2 W</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-wifi text-accent mr-2 mt-1"></i>
-                        <span>Connectivity: 915 MHz Ceramic Chip Antenna</span>
-                    </li>
-                </ul>
-            </section>
-
+    <main id="project-specifications">
+        <section class="bg-gradient-to-br from-midnight-green via-teal-900 to-battleship-gray text-white">
+            <div class="max-w-[96rem] mx-auto px-6 py-16 lg:py-20">
+                <div class="grid xl:grid-cols-[1.05fr_0.95fr] gap-10 xl:gap-12 items-center">
+                    <div class="max-w-4xl">
+                        <div class="inline-flex items-center gap-4 rounded-full bg-white/10 px-5 py-3 text-sm tracking-wide uppercase">
+                            <img src="assets/TMU-rgb.png" alt="Toronto Metropolitan University logo" class="h-10 w-auto object-contain">
+                            Capstone Technical Specification
+                        </div>
+                        <h2 class="mt-6 text-4xl md:text-[3.35rem] font-bold leading-tight">A LoRa-based outdoor cat tracking system built from tracker hardware to mobile software.</h2>
+                        <p class="mt-6 text-lg text-slate-100 max-w-3xl leading-8">Outdoor Cat Tracker combines a GPS-equipped wearable tag, a home-base relay, backend ingestion, and a cross-platform mobile application. The system is designed around one goal: giving owners clearer visibility and geofence-based awareness without putting a cellular subscription on the collar itself.</p>
+                        <div class="mt-8 grid sm:grid-cols-4 gap-4">
+                            <div class="rounded-2xl bg-white/10 p-4 border border-white/10"><p class="text-sm uppercase tracking-wide text-champagne">Weight</p><p class="mt-2 text-2xl font-bold">~35 g</p></div>
+                            <div class="rounded-2xl bg-white/10 p-4 border border-white/10"><p class="text-sm uppercase tracking-wide text-champagne">Best Range</p><p class="mt-2 text-2xl font-bold">1.06 km</p></div>
+                            <div class="rounded-2xl bg-white/10 p-4 border border-white/10"><p class="text-sm uppercase tracking-wide text-champagne">Battery</p><p class="mt-2 text-2xl font-bold">~7.5 hrs</p></div>
+                            <div class="rounded-2xl bg-white/10 p-4 border border-white/10"><p class="text-sm uppercase tracking-wide text-champagne">BOM</p><p class="mt-2 text-2xl font-bold">See Report</p></div>
+                        </div>
+                    </div>
+                    <figure class="xl:justify-self-end w-full max-w-md 2xl:max-w-lg rounded-[2rem] shadow-2xl">
+                        <img src="assets/hero-image.png" alt="Outdoor Cat Tracker prototype shown on a cat harness beside the mobile application." class="w-full rounded-[1.5rem] object-cover">
             
-            <section class="bg-white p-6 rounded-lg shadow-lg" aria-labelledby="software-heading">
-                <h2 id="software-heading" class="text-2xl font-semibold mb-4 text-primary">Software Ecosystem</h2>
-                <figure><img src="images\Week 8,9\WelcomeScreen-1.png" alt="Mobile App Screenshot for Outdoor Cat Tracker" class="w-full  object-cover rounded-md mb-6" aria-label="Screenshot of the React Native mobile app interface">
-                <figcaption class="text-sm text-center text-gray-600 mb-6">Figure 3: Mobile App Interface for Outdoor Cat Tracker</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-[96rem] mx-auto px-6 py-14">
+            <div class="bg-white rounded-[2rem] shadow-lg p-8 lg:p-10">
+                <div>
+                    <p class="text-sm uppercase tracking-[0.24em] text-beaver">System Flow</p>
+                    <h2 class="mt-2 text-3xl font-bold text-taupe">How the system works</h2>
+                    <p class="mt-4 max-w-4xl leading-8 text-gray-700">The system is built as a simple chain: the collar gathers location data, LoRa carries it back home over a low-power long-range link, the home base forwards it to the backend, and the app turns that data into something an owner can understand quickly.</p>
+                </div>
+                <figure class="mt-8 rounded-[1.75rem] bg-linen p-4 lg:p-6">
+                    <img src="assets/High_level_Diagram.png" alt="High-level diagram showing tracker hardware, LoRa transmission, backend processing, and the mobile app." class="w-full rounded-[1.25rem] object-contain">
+                    <figcaption class="text-center text-gray-600 mt-4">Figure 2: High-level diagram of the Outdoor Cat Tracker system from tracker hardware to the mobile app.</figcaption>
                 </figure>
-                <ul class="space-y-3">
-                    <li class="flex items-start">
-                        <i class="fas fa-mobile-alt text-accent mr-2 mt-1"></i>
-                        <span>Frontend: React Native Mobile App</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-database text-accent mr-2 mt-1"></i>
-                        <span>Backend: Firebase (Real-time DB & Auth)</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-map-marked-alt text-accent mr-2 mt-1"></i>
-                        <span>Features: Live GPS Map & Geofencing</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-pencil-ruler text-accent mr-2 mt-1"></i>
-                        <span>Design: Prototyped in Figma <a href="https://www.figma.com/proto/qc7LfpBLeTip5umEKkEOqn/Outdoor-Cat-Tracker-_-Prototype?page-id=1%3A3&node-id=40-7&viewport=492%2C531%2C0.24&t=0fAQd90wiGgrRFzB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=40%3A7&show-proto-sidebar=1"
-                 class="text-blue-600 underline"
-                  target="_blank" rel="noopener noreferrer">
-                (Link to Figma)</a>.</span>
-                    </li>
-                </ul>
-            </section>
-        </div>
+                <div class="mt-8 grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+                    <div class="rounded-2xl border border-timber-wolf p-6 bg-white">
+                        <h3 class="text-lg font-semibold text-taupe">Tracker</h3>
+                        <p class="mt-3 leading-7">The collar unit reads GPS coordinates, packages the data, and keeps the electronics small enough to stay wearable on the cat.</p>
+                    </div>
+                    <div class="rounded-2xl border border-timber-wolf p-6 bg-white">
+                        <h3 class="text-lg font-semibold text-taupe">LoRa Link</h3>
+                        <p class="mt-3 leading-7">LoRa was chosen because it reaches farther than short-range consumer trackers while staying lightweight and low power for a prototype collar.</p>
+                    </div>
+                    <div class="rounded-2xl border border-timber-wolf p-6 bg-white">
+                        <h3 class="text-lg font-semibold text-taupe">Home Base</h3>
+                        <p class="mt-3 leading-7">The home receiver listens for packets near the house, then forwards valid pings through Wi-Fi so the rest of the system can process them.</p>
+                    </div>
+                    <div class="rounded-2xl border border-timber-wolf p-6 bg-white">
+                        <h3 class="text-lg font-semibold text-taupe">Mobile App</h3>
+                        <p class="mt-3 leading-7">The app shows the latest position, safe-zone state, and alert history in a format that feels useful to owners rather than raw telemetry.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-[96rem] mx-auto px-6 pb-14">
+            <div class="bg-white rounded-[2rem] shadow-lg p-8 lg:p-10">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.24em] text-beaver">Approach to the project</p>
+                        <h2 class="mt-2 text-3xl font-bold text-taupe">Where this project fits</h2>
+                    </div>
+                </div>
+                <div class="mt-8 grid xl:grid-cols-3 gap-5">
+                    <div class="rounded-2xl border border-timber-wolf p-6">
+                        <h3 class="text-xl font-semibold text-taupe">Main product idea</h3>
+                        <p class="mt-3 leading-8">This project focuses on localized outdoor safety rather than nationwide cellular coverage. Its strength is a <strong>home-centered long-range model</strong> that gives owners visibility around the home and nearby area without putting a subscription-powered modem on the collar.</p>
+                    </div>
+                    <div class="rounded-2xl border border-timber-wolf p-6">
+                        <h3 class="text-xl font-semibold text-taupe">Why it stands out</h3>
+                        <ul class="mt-4 space-y-3 list-disc list-inside leading-7">
+                            <li>Dedicated long-range local link through LoRa instead of short-range Bluetooth alone</li>
+                            <li>Owner-controlled home base instead of reliance on a crowd network of nearby phones</li>
+                            <li>Integrated safe-zone workflow with live tracking and alert history</li>
+                            <li>No tracker-side cellular subscription in the current prototype architecture</li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl border border-timber-wolf p-6">
+                        <h3 class="text-xl font-semibold text-taupe">Current tradeoffs</h3>
+                        <ul class="mt-4 space-y-3 list-disc list-inside leading-7">
+                            <li>Coverage is centered around the installed home base</li>
+                            <li>Battery life is still prototype-scale rather than a final commercial runtime target</li>
+                            <li>Testing was largely manual and not yet backed by a full automated validation suite</li>
+                            <li>Late-stage custom-board reliability issues still separate the prototype from production readiness</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-[96rem] mx-auto px-6 pb-14">
+            <div class="bg-white rounded-[2rem] shadow-lg p-8 lg:p-10">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.24em] text-beaver">Hardware</p>
+                        <h2 class="mt-2 text-3xl font-bold text-taupe">Hardware specification and why each part was chosen</h2>
+                    </div>
+                </div>
+                <figure class="mt-8 max-w-5xl mx-auto">
+                    <img src="assets/Hardware-component.png" alt="Hardware components used in the Outdoor Cat Tracker system." class="w-full rounded-3xl shadow-md">
+                    <figcaption class="text-center text-gray-600 mt-3">Figure 3: Main hardware components used across the tracker and home-base prototype.</figcaption>
+                </figure>
+                <div class="mt-8 grid lg:grid-cols-2 gap-6">
+                    <div class="rounded-2xl border border-timber-wolf p-6">
+                        <h3 class="text-xl font-semibold text-taupe">Tracker-side choices</h3>
+                        <ul class="mt-4 space-y-3 list-disc list-inside leading-7">
+                            <li><strong>RAK3172:</strong> combines embedded control with long-range LoRa communication in a compact module.</li>
+                            <li><strong>Quectel L80-R:</strong> provides outdoor GPS acquisition while fitting the tracker's power and size limits.</li>
+                            <li><strong>Ceramic patch antenna:</strong> chosen over a long whip antenna because it better suits a wearable cat-mounted form factor.</li>
+                            <li><strong>600 mAh Li-Po battery:</strong> supports untethered field testing with a lightweight battery pack.</li>
+                            <li><strong>TP4056 + MCP1700:</strong> handle charging and voltage regulation to keep the electronics operating safely and reliably.</li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl border border-timber-wolf p-6">
+                        <h3 class="text-xl font-semibold text-taupe">Home-base choices</h3>
+                        <ul class="mt-4 space-y-3 list-disc list-inside leading-7">
+                            <li><strong>RAK3172 receiver:</strong> listens continuously for incoming LoRa packets from the tracker tag.</li>
+                            <li><strong>Raspberry Pi Pico 2 W:</strong> provides the Wi-Fi relay needed to upload incoming tracker data to the server.</li>
+                            <li><strong>Stationary USB-powered design:</strong> avoids the battery limits of the collar device and supports fixed deployment near the home.</li>
+                            <li><strong>PCB and enclosure iterations:</strong> move the prototype beyond breadboard development into a more realistic capstone implementation.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8 rounded-2xl bg-linen p-6">
+                    <h3 class="text-xl font-semibold text-taupe">Prototype pricing</h3>
+                    <p class="mt-3 leading-8">The full report contains the detailed bill of materials. In summary, the tracker bill of materials is approximately <strong>$30.61 CAD</strong> and the home base bill of materials is approximately <strong>$37.22 CAD</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-[96rem] mx-auto px-6 pb-14">
+            <div class="bg-white rounded-[2rem] shadow-lg p-8 lg:p-10">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.24em] text-beaver">Software</p>
+                        <h2 class="mt-2 text-3xl font-bold text-taupe">Software specification and why the stack was chosen</h2>
+                    </div>
+                </div>
+                <div class="mt-8 grid md:grid-cols-4 gap-5">
+                    <div class="rounded-2xl border border-timber-wolf p-5 text-center bg-white">
+                        <img src="assets/react-logo.png" alt="React logo" class="h-16 mx-auto object-contain">
+                        <p class="mt-4 leading-7">React Native was used to build one mobile codebase across iOS and Android.</p>
+                    </div>
+                    <div class="rounded-2xl border border-timber-wolf p-5 text-center bg-white">
+                        <img src="assets/expo.png" alt="Expo logo" class="h-16 mx-auto object-contain">
+                        <p class="mt-4 leading-7">Expo accelerated development, testing, and packaging during the capstone build.</p>
+                    </div>
+                    <div class="rounded-2xl border border-timber-wolf p-5 text-center bg-white">
+                        <img src="assets/firebase-logo.png" alt="Firebase logo" class="h-16 mx-auto object-contain">
+                        <p class="mt-4 leading-7">Firebase supported authentication and cloud-backed application data management.</p>
+                    </div>
+                    <div class="rounded-2xl border border-timber-wolf p-5 text-center bg-white">
+                        <img src="assets/flask.png" alt="Flask logo" class="h-16 mx-auto object-contain">
+                        <p class="mt-4 leading-7">Flask was used to receive tracker pings and serve device-specific data to the app.</p>
+                    </div>
+                </div>
+                <figure class="mt-10">
+                    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
+                        <img src="assets/Dashboard-image.png" alt="Dashboard screen showing the main map summary and current cat status." class="w-full aspect-[9/19] object-contain rounded-3xl shadow-md bg-white">
+                        <img src="assets/livetrack.png" alt="Live tracking screen showing the cat position on the map." class="w-full aspect-[9/19] object-contain rounded-3xl shadow-md bg-white">
+                        <img src="assets/Alert-image.png" alt="Alerts screen showing geofence-triggered notifications and history." class="w-full aspect-[9/19] object-contain rounded-3xl shadow-md bg-white">
+                        <img src="assets/Setting-image.png" alt="Settings screen showing app controls and user account options." class="w-full aspect-[9/19] object-contain rounded-3xl shadow-md bg-white">
+                    </div>
+                    <figcaption class="text-center text-gray-600 mt-3">Figure 4: Cross-platform app views for tracking, alerts, and settings.</figcaption>
+                </figure>
+                <div class="mt-8 grid lg:grid-cols-2 gap-6">
+                    <div class="rounded-2xl border border-timber-wolf p-6">
+                        <h3 class="text-xl font-semibold text-taupe">Application behavior</h3>
+                        <ul class="mt-4 space-y-3 list-disc list-inside leading-7">
+                            <li>The app is organized around live location, alerts, settings, and pet management.</li>
+                            <li>Owners can see the home marker, safe-zone circle, current pet position, and alert history in one workflow.</li>
+                            <li>Device verification and active-pet selection support multi-device and multi-pet ownership flows.</li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl border border-timber-wolf p-6">
+                        <h3 class="text-xl font-semibold text-taupe">Accessibility and UX</h3>
+                        <ul class="mt-4 space-y-3 list-disc list-inside leading-7">
+                            <li>The design intent follows <strong>WCAG 2.1 AA</strong> guidance for contrast, touch targets, readability, and clear navigation.</li>
+                            <li>The software turns raw location updates into a more understandable safety workflow for non-technical users.</li>
+                            <li>Alerting and safe-zone presentation were prioritized to reduce confusion when a cat leaves or returns home.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-[96rem] mx-auto px-6 pb-14">
+            <div class="grid xl:grid-cols-[1.05fr_0.95fr] gap-8">
+                <article class="bg-white rounded-[2rem] shadow-lg p-8 lg:p-10">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.24em] text-beaver">Testing and Result</p>
+                        <h2 class="mt-2 text-3xl font-bold text-taupe">Performance and validation</h2>
+                    </div>
+                    <figure class="mt-8 max-w-3xl mx-auto">
+                        <img src="assets/Max_distance-image.png" alt="Field test image showing the maximum distance result for the Outdoor Cat Tracker prototype." class="w-full rounded-3xl shadow-md">
+                        <figcaption class="text-center text-gray-600 mt-3">Figure 5: Long-range field test result used for performance evaluation.</figcaption>
+                    </figure>
+                    <div class="mt-8 space-y-6">
+                        <div><div class="flex items-center justify-between text-sm font-semibold text-taupe mb-2"><span>Suburban range test</span><span>1.06 km</span></div><div class="metric-bar h-4 rounded-full bg-timber-wolf"><span class="bg-midnight-green" style="width: 100%"></span></div></div>
+                        <div><div class="flex items-center justify-between text-sm font-semibold text-taupe mb-2"><span>Forest / park range test</span><span>223 m</span></div><div class="metric-bar h-4 rounded-full bg-timber-wolf"><span class="bg-fresh-teal" style="width: 21%"></span></div></div>
+                        <div><div class="flex items-center justify-between text-sm font-semibold text-taupe mb-2"><span>Battery runtime</span><span>~7.5 hrs</span></div><div class="metric-bar h-4 rounded-full bg-timber-wolf"><span class="bg-beaver" style="width: 75%"></span></div></div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-[2rem] shadow-lg p-8 lg:p-10">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.24em] text-beaver">Interactive Demo</p>
+                        <h2 class="mt-2 text-3xl font-bold text-taupe">Prototype walkthroughs and videos</h2>
+                    </div>
+                    <div class="mt-8 grid gap-8">
+                        <div>
+                            <div class="aspect-video rounded-3xl overflow-hidden shadow-md">
+                                <iframe src="https://www.youtube.com/embed/_vvbE5-ArkA" title="Cat Tracker Prototype Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-full h-full"></iframe>
+                            </div>
+                            <h3 class="mt-4 text-2xl font-semibold text-taupe">Cat Tracker Prototype Demo using Figma</h3>
+                        </div>
+                        <div>
+                            <div class="aspect-video rounded-3xl overflow-hidden shadow-md">
+                                <iframe src="https://www.youtube.com/embed/PewyX6b5mvA" title="MS11 Cat Tracker Demo Video and AirTag Comparison" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-full h-full"></iframe>
+                            </div>
+                            <h3 class="mt-4 text-2xl font-semibold text-taupe">MS11 Cat Tracker Demo Video and AirTag Comparison</h3>
+                        </div>
+                        <div class="rounded-2xl border border-timber-wolf p-6">
+                            <h3 class="text-xl font-semibold text-taupe">Source code</h3>
+                            <div class="mt-4 space-y-2">
+                                <a href="https://github.com/quangminhtra/Outdoor-CatTracker" target="_blank" rel="noopener noreferrer" class="block text-midnight-green underline hover:text-warm-orange transition">Outdoor CatTracker GitHub repository</a>
+                                <a href="https://www.figma.com/proto/qc7LfpBLeTip5umEKkEOqn/Outdoor-Cat-Tracker-_-Prototype?node-id=40-7&p=f&m=draw&scaling=scale-down&content-scaling=fixed&starting-point-node-id=40%3A7&show-proto-sidebar=1&page-id=1%3A3&t=85omcXcSdhYD7t5Q-1" target="_blank" rel="noopener noreferrer" class="block text-midnight-green underline hover:text-warm-orange transition">Figma Design Files</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="max-w-[96rem] mx-auto px-6 pb-16">
+            <div class="bg-white rounded-[2rem] shadow-lg p-8 lg:p-10">
+                <div>
+                    <p class="text-sm uppercase tracking-[0.24em] text-beaver">Galleries</p>
+                    <h2 class="mt-2 text-3xl font-bold text-taupe">Additional app views</h2>
+                    <p class="mt-4 max-w-3xl leading-8 text-gray-700">This gallery keeps only the screens that add something new beyond the main software figure above.</p>
+                </div>
+                <div class="mt-8">
+                    <div class="slider-track mt-5">
+                        <figure class="rounded-3xl border border-timber-wolf p-4 bg-white"><img src="assets/pick-home-image.png" alt="Home location selection screen used for geofence setup." class="w-full aspect-[9/19] object-contain rounded-2xl bg-white"><figcaption class="text-center text-gray-600 mt-3">Home-location selection used during geofence setup.</figcaption></figure>
+                        <figure class="rounded-3xl border border-timber-wolf p-4 bg-white"><img src="assets/pet-profile-image.png" alt="Pet profile management screen used in the app." class="w-full aspect-[9/19] object-contain rounded-2xl bg-white"><figcaption class="text-center text-gray-600 mt-3">Pet profile management screen.</figcaption></figure>
+                        <figure class="rounded-3xl border border-timber-wolf p-4 bg-white"><img src="assets/Safezone-image.png" alt="Safe-zone configuration view in the mobile app." class="w-full aspect-[9/19] object-contain rounded-2xl bg-white"><figcaption class="text-center text-gray-600 mt-3">Safe-zone and geofence-related interface.</figcaption></figure>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Key Metrics-->
-
-        <div class="container mx-auto max-w-6xl bg-white p-6 rounded-lg shadow-lg mb-12">
-            <h2 class="text-2xl font-semibold mb-4 text-center">Key Metrics</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                <div class="p-4 bg-white bg-opacity-10 rounded-md">
-                    <i class="fas fa-weight-hanging text-2xl mb-2"></i>
-                    <p class="text-lg font-bold">Weight: ~25.2g (Target < 30g) </p>
-                </div>
-                <div class="p-4 bg-white bg-opacity-10 rounded-md">
-                    <i class="fas fa-signal text-2xl mb-2"></i>
-                    <p class="text-lg font-bold">Range: >1 km</p>
-                </div>
-                <div class="p-4 bg-white bg-opacity-10 rounded-md">
-                    <i class="fas fa-dollar-sign text-2xl mb-2"></i>
-                    <p class="text-lg font-bold">Cost: ~$40.57 CAD</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Video Demonstration -->
-     <div class="w-full max-w-4xl mx-auto mt-6 mb-6 aspect-video">
-        <h3 class="text-2xl font-semibold mb-4 text-primary">Video Prototype Demonstration</h3>
-                <iframe
-                 src="https://www.youtube.com/embed/_vvbE5-ArkA"
-                 title="Cat Tracker Prototype Demo"
-                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                 allowfullscreen
-                 class="w-full h-full rounded-lg shadow-md">
-                </iframe>
-
-            <p class="mt-4 mb-6">
-             Cat Tracker Prototype Demo. You can watch the video demonstration above. Alternatively, you may interact with the prototype directly using the following link:
-             <a href="https://www.figma.com/proto/qc7LfpBLeTip5umEKkEOqn/Outdoor-Cat-Tracker-_-Prototype?page-id=1%3A3&node-id=40-7&viewport=492%2C531%2C0.24&t=0fAQd90wiGgrRFzB-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=40%3A7&show-proto-sidebar=1"
-             class="text-blue-600 underline"
-             target="_blank" rel="noopener noreferrer">Outdoor Cat Tracker Prototype (Figma)</a>. </p>        
-     </div>
-      
- <!-- Footer -->
     <footer class="bg-midnight-green text-white py-6">
-        <div class="container mx-auto px-6 text-center">
+        <div class="max-w-[96rem] mx-auto px-6 text-center">
             <nav class="mb-4">
-            <ul class="flex justify-center space-x-6">
-                <li><a href="index.html" class="hover:text-playful-yellow transition">Home</a></li>
-                <li><a href="#about-us" class="hover:text-playful-yellow transition">About Us</a></li>
-                 <li><a href="Specifications.html" class="hover:text-playful-yellow transition">Specifications</a></li>
-                <li><a href="timeline.html" class="hover:text-playful-yellow transition">Project Timeline</a></li>
-            </ul>
+                <ul class="flex justify-center space-x-6">
+                    <li><a href="index.html" class="hover:text-playful-yellow transition">Home</a></li>
+                    <li><a href="index.html#about-us" class="hover:text-playful-yellow transition">About Us</a></li>
+                    <li><a href="Specifications.html" class="hover:text-playful-yellow transition">Specifications</a></li>
+                    <li><a href="timeline.html" class="hover:text-playful-yellow transition">Project Timeline</a></li>
+                </ul>
             </nav>
-            <div class="space-x-4">
-              <!-- <a href="https://github.com/your-repo" class="text-3xl hover:text-fresh-teal transition"><i class="fa-brands fa-github"></i></a> -->
-            </div>
-           
             <p class="mt-4">&copy; 2025 Outdoor Cat Tracker Team</p>
         </div>
-       
     </footer>
 </body>
 </html>

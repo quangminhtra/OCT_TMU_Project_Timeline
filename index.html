@@ -1,27 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans:wght@400;500&display=swap" 
-    rel="stylesheet">
-    <title>Outdoor Cat Tracker-Homepage</title>
-    
-
-    <!-- Font Awesome 6 -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Outdoor Cat Tracker - Homepage</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-
-     <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-    }
-    h1, h2, h3, nav, button {
-      font-family: 'Poppins', sans-serif;
-    }
-  </style>
-
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {font-size: 18px; font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4, nav, button, a.cta { font-family: 'Poppins', sans-serif; }
+    </style>
     <script>
         tailwind.config = {
             theme: {
@@ -41,150 +30,208 @@
                         'champagne-pink': '#E3D5CA',
                         'timber-wolf': '#D6CCC2',
                         'battleship-gray': '#8A817C'
+                    },
+                    boxShadow: {
+                        'hero': '0 30px 80px rgba(0, 73, 83, 0.18)'
                     }
                 }
             }
-        }
+        };
 
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menu-toggle');
             const navLinks = document.getElementById('nav-links');
 
             menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('hidden');
-            navLinks.classList.toggle('opacity-0');
-            navLinks.classList.toggle('opacity-100');
-            
-            // Toggle column for mobile (column layout)
-            if (window.innerWidth < 768) {
-                navLinks.classList.toggle('flex-col');
-                navLinks.classList.toggle('space-y-4');
-                navLinks.classList.toggle('space-x-0');
-            }
+                navLinks.classList.toggle('hidden');
+                navLinks.classList.toggle('opacity-0');
+                navLinks.classList.toggle('opacity-100');
+                if (window.innerWidth < 768) {
+                    navLinks.classList.toggle('flex-col');
+                    navLinks.classList.toggle('space-y-4');
+                    navLinks.classList.toggle('space-x-0');
+                }
             });
         });
     </script>
 </head>
 <body class="bg-columbia-blue text-gray-800">
+    <header class="bg-midnight-green text-white shadow-lg sticky top-0 z-50">
+        <nav class="max-w-[96rem] mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold flex items-center gap-3">
+                <img src="assets/MS_11_homebase logo.png" alt="Outdoor Cat Tracker logo" class="h-15 w-20 object-contain">
+                <span>Outdoor Cat Tracker</span>
+            </h1>
+            <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul id="nav-links" class="flex space-x-6 md:flex md:space-x-6 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-midnight-green md:bg-transparent p-4 md:p-0 transition-all duration-300 ease-in-out transform md:transform-none md:opacity-100 opacity-0 hidden md:flex">
+                <li><a href="index.html" class="block md:inline-block hover:text-playful-yellow transition">Home</a></li>
+                <li><a href="#about-us" class="block md:inline-block hover:text-playful-yellow transition">About Us</a></li>
+                <li><a href="Specifications.html" class="block md:inline-block hover:text-playful-yellow transition">Specifications</a></li>
+                <li><a href="timeline.html" class="block md:inline-block hover:text-playful-yellow transition">Project Timeline</a></li>
+            </ul>
+        </nav>
+    </header>
 
- 
-<header class="bg-midnight-green text-white shadow-lg sticky top-0 z-50">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold flex items-center">
-            <i class="fa-solid fa-cat mr-2"></i> Outdoor Cat Tracker
-        </h1>
-       
-        <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-      
-        <ul id="nav-links" class="flex space-x-6 md:flex md:space-x-6 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-midnight-green md:bg-transparent p-4 md:p-0 transition-all duration-300 ease-in-out transform md:transform-none md:opacity-100 opacity-0 md:opacity-100 hidden md:flex">
-            <li><a href="index.html" class="block md:inline-block hover:text-playful-yellow transition">Home</a></li>
-            <li><a href="#about-us" class="block md:inline-block hover:text-playful-yellow transition">About Us</a></li>
-            <li><a href="Specifications.html" class="block md:inline-block hover:text-playful-yellow transition">Specifications</a></li>
-            <li><a href="timeline.html" class="block md:inline-block hover:text-playful-yellow transition">Project Timeline</a></li>
-        </ul>
-    </nav>
-</header>
-
-    <!-- Intro -->
-    <section id="introduction" class="container mx-auto px-6 py-12 text-center">
-        <h2 class="text-4xl font-bold text-taupe mb-4">Welcome to Our Pet Safety Adventure!</h2>
-        <p class="text-lg max-w-2xl mx-auto mb-8">
-            The Outdoor Cat Tracker is a smart, lightweight wearable tag designed for adventurous cats. It tracks location in real-time using GPS outdoors and BLE or Wi-Fi indoors, monitors activity levels, and sends geofencing alerts to keep your furry friend safe.
-        </p>
-       <!-- <img src="placeholder-cat-tracker.jpg" alt="Prototype of the Outdoor Cat Tracker device on a cat collar" class="w-full max-w-md mx-auto rounded-lg shadow-md mb-8"> for later and future use-->
-        <a href="timeline.html" class="bg-beaver text-white px-6 py-3 rounded hover:bg-light-gold transition">See Our Project Timeline</a>
-    </section>
-
-    <!-- About Us -->
-    <section id="about-us" class="container mx-auto px-6 py-12 bg-white">
-        <h2 class="text-3xl font-bold text-taupe mb-8 text-center"><i class="fa-solid fa-shield-cat"></i> About Us <i class="fa-solid fa-shield-cat"></i></h2>
-        <p class="text-lg text-center mb-6">We are a team of four Computer Engineering students at Toronto Metropolitan University (TMU), passionate about combining technology with pet care. Inspired by the real-world challenge of ensuring the safety of outdoor cats, we’re motivated to create innovative solutions that bring peace of mind to pet owners.</p>
-        <p class="text-center mb-8 text-gray-600 italic">Faculty Lab Coordinator: Meranda Salem</p>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <div class="text-center p-4 bg-linen rounded-lg shadow-md">
-                <h3 class="text-lg font-semibold text-taupe">Muhammad Al-lami</h3>
-                <p>Focused on sensor selection, circuit/PCB design, and power management. Inspired by sustainable tech to keep devices lightweight.</p>
+    <main>
+        <section class="relative overflow-hidden bg-gradient-to-br from-midnight-green via-teal-900 to-battleship-gray text-white">
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute -top-24 -left-12 h-72 w-72 rounded-full bg-fresh-teal blur-3xl"></div>
+                <div class="absolute top-24 right-0 h-80 w-80 rounded-full bg-warm-orange blur-3xl"></div>
+                <div class="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-playful-yellow blur-3xl"></div>
             </div>
-            <div class="text-center p-4 bg-champagne-pink rounded-lg shadow-md">
-              
-                <h3 class="text-lg font-semibold text-taupe">Louis Chevalier</h3>
-                <p>Handles microcontroller programming and sensor integration. Motivated by solving real-time tracking challenges.</p>
-            </div>
-            <div class="text-center p-4 bg-timber-wolf rounded-lg shadow-md">
-                <h3 class="text-lg font-semibold text-taupe">Minh Tran</h3>
-                <p>Develops the mobile app for live tracking. Inspired by user-friendly interfaces to enhance pet owner experience.</p>
-            </div>
-            <div class="text-center p-4 bg-silver rounded-lg shadow-md">
-            
-                <h3 class="text-lg font-semibold text-taupe">Nicholas Muttoo</h3>
-                <p>Integrates hardware and app, conducts tests. Motivated by ensuring safety and usability for outdoor cats.</p>
-            </div>
-        </div>
-      
-    </section>
+            <div class="container relative mx-auto px-6 py-20 lg:py-24">
+                <div class="max-w-5xl mx-auto text-center">
+                    <div class="inline-flex items-center gap-4 rounded-full bg-white/10 px-5 py-3 text-sm tracking-[0.2em] uppercase border border-white/10">
+                        <img src="assets/TMU-rgb.png" alt="Toronto Metropolitan University logo" class="h-10 w-auto object-contain">
+                        TMU Capstone Project
+                    </div>
+                    <h2 class="mt-6 text-4xl md:text-6xl font-bold leading-tight">A smarter way to keep outdoor cats visible, safe, and close to home.</h2>
+                    <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl leading-8 text-slate-100">Outdoor Cat Tracker is a LoRa-based pet monitoring system that combines a lightweight GPS tracker, a dedicated home-base receiver, a cloud-connected backend, and a cross-platform mobile app for live map tracking and geofence alerts.</p>
+                    <div class="mt-10 flex flex-wrap justify-center gap-4">
+                        <a href="Specifications.html" class="cta rounded-full bg-warm-orange px-7 py-3 text-white font-semibold hover:bg-orange-500 transition">Explore Specifications</a>
+                        <a href="timeline.html" class="cta rounded-full border border-white/30 px-7 py-3 text-white font-semibold hover:bg-white/10 transition">View Project Timeline</a>
+                    </div>
+                    <div class="mt-12 grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                        <div class="rounded-2xl bg-white/10 px-5 py-5 border border-white/10">
+                            <p class="text-sm uppercase tracking-wide text-champagne">Best Tested Range</p>
+                            <p class="mt-2 text-3xl font-bold">1.06 km</p>
+                        </div>
+                        <div class="rounded-2xl bg-white/10 px-5 py-5 border border-white/10">
+                            <p class="text-sm uppercase tracking-wide text-champagne">Tracker Weight</p>
+                            <p class="mt-2 text-3xl font-bold">~35 g</p>
+                        </div>
+                        <div class="rounded-2xl bg-white/10 px-5 py-5 border border-white/10">
+                            <p class="text-sm uppercase tracking-wide text-champagne">Battery Runtime</p>
+                            <p class="mt-2 text-3xl font-bold">~7.5 hrs</p>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Project Specification  -->
-    <section id="project-specifications" class="container mx-auto px-6 py-12">
-        <h2 class="text-3xl font-bold text-taupe mb-8 text-center">Project Specifications</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-battleship-gray mb-4">Key Features</h3>
-                <ul class="space-y-2 mb-4 list-disc list-inside">
-                    <li>GPS + BLE/Wi-Fi Hybrid Tracking</li>
-                    <li>Low-Power Design (≤30g weight)</li>
-                    <li>Activity Monitoring (Resting, Walking, Running)</li>
-                    <li>Geofencing Alerts</li>
-                    <li>E-Ink Display for Owner Contact</li>
-                    <li>Mobile App Integration</li>
-                </ul>
+                <div class="mt-14 max-w-6xl mx-auto">
+                    <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 items-center rounded-[2rem] bg-white p-5 md:p-6 shadow-hero">
+                        <div class="rounded-[1.5rem] overflow-hidden bg-linen">
+                            <img src="assets/hero-image.png" alt="White cat wearing the Outdoor Cat Tracker harness beside the mobile app and tracker hardware prototype." class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-taupe px-2">
+                            <div class="flex items-center gap-4">
+                                <img src="assets/Logo.png" alt="Outdoor Cat Tracker logo" class="h-14 w-14 object-contain">
+                                <p class="text-sm uppercase tracking-[0.2em] text-beaver">Outdoor Cat Tracker Production</p>
+                            </div>
+                            <h3 class="mt-3 text-3xl font-bold leading-tight">A real cat, a real wearable prototype, and a complete owner-facing tracking experience.</h3>
+                            <p class="mt-4 text-base md:text-lg leading-8">This project started from a real story. One of our teammates, Louis, once lost a cat while visiting France and spent a long time trying to find him again. That experience shaped the way we thought about this capstone: not as a generic tracker, but as something that could give owners faster visibility, clearer alerts, and more confidence when an outdoor cat does not come back on time.</p>
+                            <div class="mt-6 rounded-[2rem] bg-linen px-5 py-4">
+                                <p class="text-sm md:text-base leading-7"><strong>Visual Highlight:</strong> wearable tracker, mobile app experience, cat harness integration, and a more direct visitor-first presentation of the project.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-battleship-gray mb-4">Tech Stack</h3>
-                <p class="mb-4">Microcontroller, GPS Module, Accelerometer, Rechargeable Battery, React Native Mobile App.</p>
-                <a href="Specifications.html" class="bg-beaver text-white px-6 py-2 rounded hover:bg-light-gold transition">Learn More</a>
+        </section>
+
+        <section class="container mx-auto px-6 py-14">
+            <div class="bg-white rounded-[2rem] shadow-lg p-8">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.24em] text-beaver">Our Capstone Poster</p>
+                        <h2 class="mt-2 text-3xl font-bold text-taupe">TMU Capstone 2025-2026</h2>
+                    </div>
+                    <div class="rounded-[2rem] bg-linen px-5 py-4">
+                        <p class="text-sm md:text-base text-taupe"><strong>Project Focus:</strong> <strong>LoRa pet tracking</strong>, <strong>GPS monitoring</strong>, <strong>home-base relay</strong>, <strong>mobile geofencing</strong>, <strong>capstone showcase</strong>.</p>
+                    </div>
+                </div>
+                <p class="mt-6 text-lg leading-8 max-w-4xl">To all visitors, our poster is the first entry point into the project. This section puts the capstone summary front and center before we can move into the deeper technical specification and timeline pages.</p>
+                <div class="mt-8 rounded-[1.75rem] bg-white p-4 shadow-sm">
+                    <div class="overflow-hidden rounded-[1.25rem] border border-timber-wolf bg-white">
+                        <img src="assets/Poster.png" alt="Outdoor Cat Tracker capstone poster." class="w-full h-auto object-contain">
+                    </div>
+                </div>
+                <div class="mt-6 flex flex-wrap items-center gap-4">
+                    <a href="https://www.canva.com/design/DAHGMzs4xgk/x7w6FLFA8yV0zb7NR20RYg/view?utm_content=DAHGMzs4xgk&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener noreferrer" class="cta rounded-full bg-midnight-green px-6 py-3 text-white font-semibold hover:bg-teal-900 transition">Open Poster in Canva</a>
+                    <a href="Specifications.html#interactive-demo" class="cta rounded-full bg-warm-orange px-6 py-3 text-white font-semibold hover:bg-orange-500 transition">Watch Demo Videos</a>
+                    <p class="text-sm text-gray-600">Poster Outdoor Cat Tracker - By MS-11 Team</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Acknowledgement -->
-    <section id="acknowledgement" class="container mx-auto px-6 py-12 bg-champagne rounded-lg my-8 shadow-md">
-        <h2 class="text-3xl font-bold text-taupe mb-6 text-center">Acknowledgements</h2>
-        <p class="text-lg text-center mb-4 italic">
-            We would like to express our heartfelt gratitude to everyone who supported us throughout this project.
-        </p>
-        <ul class=" max-w-2xl mx-auto text-center text-gray-700 space-y-2">
-            <li>
-                Special thanks to our Faculty Lab Coordinator, Meranda Salem, for her invaluable guidance and encouragement.
-            </li>
-            <li>
-                We appreciate the support from the faculty and staff at Toronto Metropolitan University (TMU) for providing resources and mentorship.
-            </li>
-            <li>
-                Our sincere thanks to all external supporters, friends, and family members whose advice and encouragement helped us bring this project to life.
-            </li>
-        </ul>
-    </section>
+        <section id="about-us" class="container mx-auto px-6 pb-14">
+            <div class="bg-gradient-to-r from-white to-linen rounded-[2rem] shadow-lg p-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <p class="text-sm uppercase tracking-[0.24em] text-beaver">Team</p>
+                    <p class="mt-4 text-gray-600 italic">Faculty Supervisor: Dr. Meranda Salem</p>
+                    <p class="mt-4 leading-8">We are a team of Computer Engineering students at Toronto Metropolitan University. Each person worked on a different part of the system, and the project only came together because the hardware, backend, and mobile app were built and tested side by side.</p>
+                </div>
+                <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+                    <div class="rounded-3xl bg-white p-6 shadow-md">
+                        <h3 class="text-xl font-semibold text-taupe">Muhammad Al-lami</h3>
+                        <p class="mt-3 leading-7">Muhammad focused on the tracker hardware itself, from sensor selection and PCB work to antenna decisions and the power path that kept the wearable device compact and practical.</p>
+                    </div>
+                    <div class="rounded-3xl bg-white p-6 shadow-md">
+                        <h3 class="text-xl font-semibold text-taupe">Louis Chevalier</h3>
+                        <p class="mt-3 leading-7">Louis built out the home base side of the system, handling microcontroller integration, receiver firmware, and the relay behavior that moved LoRa data toward the server.</p>
+                    </div>
+                    <div class="rounded-3xl bg-white p-6 shadow-md">
+                        <h3 class="text-xl font-semibold text-taupe">Minh Tran</h3>
+                        <p class="mt-3 leading-7">Minh shaped the mobile experience, including the app screens, live tracking views, pet management flows, branding, and the visual presentation of the project.</p>
+                    </div>
+                    <div class="rounded-3xl bg-white p-6 shadow-md">
+                        <h3 class="text-xl font-semibold text-taupe">Nicholas Muttoo</h3>
+                        <p class="mt-3 leading-7">Nicholas handled the backend and API path, making sure incoming tracker data could be validated, stored, and delivered reliably to the mobile application.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="container mx-auto px-6 pb-14">
+            <div class="bg-white rounded-[2rem] shadow-lg p-8">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.24em] text-beaver">Acknowledgements</p>
+                        <h2 class="mt-2 text-3xl font-bold text-taupe">Support that helped make the project real.</h2>
+                    </div>
+                </div>
+                <div class="mt-8 grid md:grid-cols-1 gap-6">
+                    <div class="rounded-3xl bg-linen p-6">
+                        <p class="leading-8">A special thanks to Dr. Meranda Salem for her aid and guidance during the project. We also express our gratitude to all contributors in and out of TMU. A special thanks to Tom Croux for helping with PCB soldering and providing equipment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Footer -->
+        <section class="container mx-auto px-6 pb-16">
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="Specifications.html" class="cta bg-midnight-green text-white rounded-[2rem] p-8 shadow-lg hover:bg-teal-900 transition">
+                    <p class="text-sm uppercase tracking-[0.2em] text-champagne">Deep Dive</p>
+                    <h3 class="mt-3 text-3xl font-bold">Specifications</h3>
+                    <p class="mt-4 leading-8">Review the full technical specification, architecture, performance data, embedded demos, image galleries, and project contact section.</p>
+                </a>
+                <a href="timeline.html" class="cta bg-white text-taupe rounded-[2rem] p-8 shadow-lg hover:bg-linen transition">
+                    <p class="text-sm uppercase tracking-[0.2em] text-beaver">Build Journey</p>
+                    <h3 class="mt-3 text-3xl font-bold">Timeline</h3>
+                    <p class="mt-4 leading-8">Follow the project from Fall 2025 planning through the Winter 2026 implementation milestones and MCR development phases.</p>
+                </a>
+                <a href="Specifications.html#interactive-demo" class="cta bg-warm-orange text-white rounded-[2rem] p-8 shadow-lg hover:bg-orange-500 transition">
+                    <p class="text-sm uppercase tracking-[0.2em] text-champagne">Watch It</p>
+                    <h3 class="mt-3 text-3xl font-bold">Demo Videos</h3>
+                    <p class="mt-4 leading-8">See the prototype walkthrough, system behavior, and comparison material presented in the capstone showcase.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
     <footer class="bg-midnight-green text-white py-6">
         <div class="container mx-auto px-6 text-center">
             <nav class="mb-4">
-            <ul class="flex justify-center space-x-6">
-                <li><a href="index.html" class="hover:text-playful-yellow transition">Home</a></li>
-                <li><a href="#about-us" class="hover:text-playful-yellow transition">About Us</a></li>
-                <li><a href="Specifications.html" class="hover:text-playful-yellow transition">Specifications</a></li>
-                <li><a href="timeline.html" class="hover:text-playful-yellow transition">Project Timeline</a></li>
-            </ul>
+                <ul class="flex justify-center space-x-6">
+                    <li><a href="index.html" class="hover:text-playful-yellow transition">Home</a></li>
+                    <li><a href="#about-us" class="hover:text-playful-yellow transition">About Us</a></li>
+                    <li><a href="Specifications.html" class="hover:text-playful-yellow transition">Specifications</a></li>
+                    <li><a href="timeline.html" class="hover:text-playful-yellow transition">Project Timeline</a></li>
+                </ul>
             </nav>
-            <div class="space-x-4">
-            <!-- <a href="https://github.com/your-repo" class="text-3xl hover:text-fresh-teal transition"><i class="fa-brands fa-github"></i></a> -->
-            </div>
             <p class="mt-4">&copy; 2025 Outdoor Cat Tracker Team</p>
         </div>
     </footer>
-
 </body>
 </html>

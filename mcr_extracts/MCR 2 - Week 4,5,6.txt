@@ -1,0 +1,36 @@
+===== PAGE 1 =====
+COE/ELE 70AB Milestones Compliance Report (MCR) Project Title MS 11 - Outdoor Cat Tracker MCR Number II (weeks 4,5 & 6) Project Manager for the MCR period Louis Chevalier Team Players for the MCR period Minh Tran, Nicholas Muttoo, Muhammad Al-Lami Faculty Supervisor Dr. Meranda Salem 1. Tasks Outlined for the Reporting Period (e.g. MCR II – Weeks 4,5 & 6) (Provide detailed information on the tasks to be completed for the reporting period as per the milestone submitted to your FLC in Week3) Group: MS 11 Student A (M.A): - Testing Lora transmission capabilities with L.C. - Range Calculations - Solder LoRA + GPS system. - Mounting hardware on cat harness. Student B (L.C.): - Organize tests with (M.A) to gage if the Raspberry Pi pico W can receive the structured data from the cat-tracker - Work with (N.M) to unify the programs for receiving data from the LoRa receiver as well as sending data to the firebase database. - Research of PCB design and hopefully start sketching on KiCAD Student C (T.M): - Adding styling for most of the screens for the app development - Adding notifications logic with Exit and Return, Battery percentage - Forgot Password trigger the sent back email immediately - Create map and map preview component 95% finished
+
+===== PAGE 2 =====
+- Authentication set up for login and registration flow Student D (N.M): - Add requested API calls to backend from Minh and Louis - Connect API backend to Raspberry pi and take lora transmission - Facilitate connection to front end, by the end of phase a ping should be able to be sent from GPS and received on front end 2. Progress Made in Reporting Period (e.g. MCR II – Weeks 4,5 & 6) (Provide detailed information on the progress that you (as a group and individual) made during the reporting period. You can include figures, datasheets, flowcharts etc. and additional information as requested by your FLC. You should use your progress to justify compliance to the tasks outlined for the reporting period as per the milestones submitted to your FLC in Week3) Group: MS 11 Student A (M.A): - Initial testing of loRA range and capabilities in noisy radio environments. - RSSI measurement and data extrapolation. - Soldered GPS to prototype board and connected it to RAK3172 Student B (L.C.): - Organized tests with (M.A); the pico 2 W now receives GPS data successfully from the cat-tracker (and using the LoRa connection) - Worked with (N.M); the pico W can send dummy data to the server. - Unified the script for the Pico W to send the GPS data it receives to the server. The main implementation for the Homebase is now complete(i.e., the homebase now does what we set out for it to do, all that is left is finishing touches).
+
+===== PAGE 3 =====
+Figure 1: Output from RP pico 2 W acting a relay between GPS and server Student C (T.M):
+
+===== PAGE 4 =====
+Figure 2: Welcome Screen - LogIn/Register Screen
+
+===== PAGE 5 =====
+Figure 3: Settings - Profile - Pets adjustments
+
+===== PAGE 6 =====
+Figure 4: Alerts page and the reset password function trigger on your email
+
+===== PAGE 7 =====
+Figure 5: Cat Map and Cat Map Preview when he is in the safe zone
+
+===== PAGE 8 =====
+Figure 6: Cat Map and Cat Map Preview when he is in the safe zone
+
+===== PAGE 9 =====
+Student D (N.M): - Server and API was updated to match incoming data from LoRa and specification of the front-end application - Worked with Louis to successfully receive LoRa GPS transmission on raspberry pi pico - Server now successfully plays its part in the data flow chain, storing incoming GPS data and providing it to frontend upon request Figure 7: List of GPS location pings that server received from pico 2 W Server successfully receives location pings from home base, which successfully receives pings from cat tracker.
+
+===== PAGE 10 =====
+Figure 8: Location of Minh (T.M.) and Muhammad (M.A.) during testing of cat tracker Location Pings received on server are accurate to location of cat tracker 3. Difficulties Encountered in Reporting Period (Provide detailed information on the difficulties and issues that you encountered during the reporting period and how you plan to address this in the following periods) Group: MS 11 Student A (M.A): - The MCP1700 voltage regulator would overheat when connected to battery output. - Soldered RAK3172 on the PCB prototype board can’t be interfaced with, It may have been burned.
+
+===== PAGE 11 =====
+A small metal heatsink should be attached to the LDO regulator to keep it cool. Student B: (L.C.): - Pico 1 W had issues sending data to the server. Something with TLS handshakes being rejected. The solution was to use a Pico 2 W instead. This cost us a week since the issue showed when we met up to test during our weekly meeting. Student C (T.M): - Implemented the app with complexity in my the advanced functions and styling - Consumed a lot time and effort to debug and and change minimal styling and logic Student D (N.M): - API testing was done on Raspberry Pico 2 W and LoRa testing was done on raspberry pi pico 1 W, this should not have led to any issue as they both run the same version of micropython but the pico 1 could not connect to the API for an unknown reason. This required resoldering pins onto the pico 2 4. Tasks to Be Completed in the Next Reporting Period (Outline the tasks to be completed in the next reporting period. Please note this should match with your milestones submitted to your FLC in Week3, however in consultation with (and approval of) your FLC, you can modify this to accommodate incomplete tasks from the previous period. Here you should also identify the Project Manager for the next period) Group: MS 11 Student A (M.A): - Work with group members on soldering battery charging circuit and voltage regulator. - Re-try soldering RAK3172 and GPS together. - Mount the soldered hardware onto the cat harness. Student B (L.C.):
+
+===== PAGE 12 =====
+- Improve on the Homebase implementation: - Solder homebase components onto a compact perfboard. - Clean up the output of Homebase when connected to computer - Have the pico 2 W start up everytime it gets a power source, not just when the script gets called via terminal. In other words, remove the need to connect homebase to PC - Migrate scripts from MicroPython to C - Actually start research of PCB design and hopefully start sketching on KiCAD (it is starting to look like the PCB implementation is not gonna be completed in time for April) Student C (T.M): - Conduct combination with API reflect into the map in the app - Polish single elements from the map - Conducting the test for each functions Student D (N.M): - Solder cat tracker charge circuit to battery and voltage regulator - Fully solder and build homebase - Build container for homebase - Continue updating API as needs of front end app become more clear
+
